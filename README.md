@@ -115,24 +115,6 @@ npm run zip            # package the whole folder as digital-clock-module.zip
 
 ---
 
-## Deploy the demo to GitHub Pages
-
-A ready-made GitHub Actions workflow (`.github/workflows/deploy.yml`) builds the CSS from SCSS and publishes the demo as a static GitHub Pages site — free hosting, no extra config.
-
-**One-time setup (~30 seconds):**
-
-1. Push this folder to a GitHub repo (e.g. `your-username/digital-clock-module`).
-2. In the repo, go to **Settings → Pages → "Build and deployment"** and set **Source = "GitHub Actions"**.
-3. Push to `main` (or merge any PR). The workflow runs automatically.
-
-Your demo is live at **`https://<your-username>.github.io/<your-repo-name>/`** within ~30 seconds of the workflow finishing.
-
-The component resolves its own folder at runtime from the `<script src>` URL, so it works whether the site is served from the repo root, a sub-path (like `username.github.io/repo-name/`), or a custom domain — no base-path configuration needed. To trigger a manual redeploy, go to the **Actions** tab and run the "Deploy demo to GitHub Pages" workflow.
-
-> **Note:** the workflow stages only `index.html` + `dist/` + `README.md` + `LICENSE` to the Pages artifact (not `src/`). The `dist/` folder already contains the compiled CSS, bundled JS, fonts, icons, wallpapers, and config — everything the demo needs to run. If you edit SCSS or `src/js/`, the workflow rebuilds `dist/` on every push.
-
----
-
 ## Configuration reference (`dist/config.json`)
 
 Every option below is honored by the component. Runtime tweaks from the settings panel are saved to `localStorage` (`digital-clock:prefs`) and override these values; call `clock.resetConfig()` to clear them.
