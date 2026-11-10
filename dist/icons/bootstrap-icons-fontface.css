@@ -1,0 +1,15 @@
+/*!
+ * Bootstrap Icons — @font-face only (loaded in main document so the font
+ * loads correctly even though the icon class rules live in a shadow-DOM
+ * stylesheet. Bootstrap Icons v1.11.3, MIT License.
+ * https://github.com/twbs/icons
+ */
+
+@font-face {
+  font-display: block;
+  font-family: "bootstrap-icons";
+  src: url("./fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6") format("woff2"),
+url("./fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("woff"),
+url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2") format("woff2"),
+url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff") format("woff");
+}

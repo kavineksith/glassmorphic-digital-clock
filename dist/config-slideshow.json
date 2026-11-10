@@ -1,0 +1,66 @@
+{
+  "_comment": "Slideshow example config — rotates through 5 copyright-free Pexels photos (free license, no attribution required) in dist/assets/. Use with: <digital-clock config=\"dist/config-slideshow.json\"></digital-clock>",
+  "_photo_credits_optional": {
+    "_note": "Pexels License does NOT require attribution. Credits below are a courtesy — safe to delete.",
+    "wallpaper-aurora.jpg":          "Photo by kublizz          on Pexels — https://www.pexels.com/photo/16681026/",
+    "wallpaper-aurora-pink.jpg":     "Photo by Jason Pittman    on Pexels — https://www.pexels.com/photo/28949224/",
+    "wallpaper-mountain-sunset.jpg": "Photo by Bastian Riccardi on Pexels — https://www.pexels.com/photo/38664023/",
+    "wallpaper-milky-way.jpg":       "Photo by Tanita Lupa     on Pexels — https://www.pexels.com/photo/39180815/",
+    "wallpaper-night-street.jpg":    "Photo by Agustin Fernandez on Pexels — https://www.pexels.com/photo/17067146/"
+  },
+
+  "clock": {
+    "format": "24",
+    "showSeconds": true,
+    "showAmPm": true,
+    "showDate": true,
+    "showTimezone": true,
+    "dateStyle": "long",
+    "timezone": "auto",
+    "locale": "auto"
+  },
+
+  "style": {
+    "theme": "neon-cyber",
+    "font": { "family": "retro-neon", "size": "lg", "weight": 700 },
+    "glass": { "blur": 22, "opacity": 0.4, "liquid": true },
+    "border": {
+      "mode": "animated-gradient",
+      "width": 2,
+      "color": "rgba(255,255,255,0.14)",
+      "gradientColors": ["#22d3ee", "#f472b6", "#818cf8", "#22d3ee"],
+      "animationDuration": 4
+    }
+  },
+
+  "background": {
+    "mode": "slideshow",
+    "image": "assets/wallpaper-aurora.jpg",
+    "images": [
+      "assets/wallpaper-aurora.jpg",
+      "assets/wallpaper-aurora-pink.jpg",
+      "assets/wallpaper-mountain-sunset.jpg",
+      "assets/wallpaper-milky-way.jpg",
+      "assets/wallpaper-night-street.jpg"
+    ],
+    "slideshowInterval": 6,
+    "slideshowTransition": 1400,
+    "fit": "cover",
+    "position": "center center",
+    "gradient": {
+      "type": "linear",
+      "angle": 135,
+      "colors": ["#0f172a", "#1e1b4b", "#312e81"],
+      "neon": true,
+      "animate": true
+    },
+    "overlay": true,
+    "overlayColor": "rgba(2,6,23,0.32)"
+  },
+
+  "features": {
+    "settingsPanel": true,
+    "keyboardShortcuts": true,
+    "persist": true
+  }
+}

@@ -1,0 +1,73 @@
+// ============================================================
+//  Digital Clock Module — _glass.scss
+//  Glassmorphism + "liquid glass" treatment for the panel.
+//  - backdrop-filter blur + saturation (the actual frosted look)
+//  - layered translucent gradients for depth
+//  - optional specular highlights (liquid glass) toggled by
+//    --dc-liquid (1 on / 0 off)
+//  - animated gradient border via a ::before pseudo with the
+//    gradient painted on it, masked to the border ring only.
+// ============================================================
+
+@mixin glass-surface {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(135deg, var(--dc-glass-tint-2), transparent 60%),
+    var(--dc-glass-tint);
+  background-blend-mode: screen, normal;
+  -webkit-backdrop-filter: blur(var(--dc-glass-blur)) saturate(var(--dc-glass-saturate));
+  backdrop-filter: blur(var(--dc-glass-blur)) saturate(var(--dc-glass-saturate));
+  border-radius: var(--dc-radius);
+  box-shadow: var(--dc-shadow);
+  overflow: hidden;
+}
+
+// Animated gradient border ring.
+// Modeled with a ::before that paints the gradient and is then
+// inset by --dc-border-width so only the ring shows.
+@mixin gradient-border {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: var(--dc-border-width);
+    background: var(--dc-border-grad);
+    background-size: var(--dc-border-grad-size);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &[data-border="animated-gradient"]::before {
+    animation: dc-border-shift var(--dc-border-anim-dur, 6s) linear infinite;
+  }
+}
+
+// Liquid-glass specular highlights. Two soft radial streaks that
+// suggest refraction on a glossy surface. Disabled when
+// --dc-liquid is 0 (JS can turn this off for a flat frosted look).
+@mixin liquid-highlights {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 0;
+    opacity: calc(var(--dc-liquid, 1) * 1);
+    background:
+      radial-gradient(120% 60% at 18% 0%, rgba(255, 255, 255, 0.28), transparent 55%),
+      radial-gradient(80% 50% at 100% 100%, rgba(255, 255, 255, 0.16), transparent 60%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 30%);
+    mix-blend-mode: screen;
+  }
+}

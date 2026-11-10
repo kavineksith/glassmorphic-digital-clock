@@ -1,0 +1,46 @@
+// ============================================================
+//  Digital Clock Module — _animations.scss
+// ============================================================
+
+@keyframes dc-border-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// Animated neon gradient background (used when background.mode = gradient)
+@keyframes dc-bg-pan {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// Slideshow crossfade
+@keyframes dc-slide-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+// Gentle entrance for the panel
+@keyframes dc-rise {
+  from { opacity: 0; transform: translateY(14px) scale(0.985); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+// Soft pulse for the seconds colon
+@keyframes dc-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+
+// Accent shimmer on the date label (subtle)
+@keyframes dc-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+// Settings panel slide-in
+@keyframes dc-panel-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}

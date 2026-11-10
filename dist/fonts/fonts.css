@@ -1,0 +1,125 @@
+/*!
+ * Digital Clock Module — fonts.css
+ * Offline-first @font-face declarations. Each face lists the local woff2 first
+ * (so the module works with no internet connection) and the matching Google
+ * Fonts / Fontsource CDN URL second, so a missing local file falls back to CDN
+ * automatically. Swap the order below if you prefer CDN-first.
+ */
+
+/* ---------- Share Tech Mono (default 7-seg digital face) ---------- */
+@font-face {
+  font-family: 'Share Tech Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('./share-tech-mono/share-tech-mono-latin-400-normal.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/@fontsource/share-tech-mono@5.2.5/files/share-tech-mono-latin-400-normal.woff2') format('woff2');
+}
+
+/* ---------- Inter (default label / UI face) ---------- */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('./inter/inter-latin-400-normal.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/@fontsource/inter@5.2.5/files/inter-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url('./inter/inter-latin-500-normal.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/@fontsource/inter@5.2.5/files/inter-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    url('./inter/inter-latin-600-normal.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/@fontsource/inter@5.2.5/files/inter-latin-600-normal.woff2') format('woff2');
+}
+
+/* ---------- Orbitron (retro neon face) ---------- */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('./orbitron/orbitron-latin-400-normal.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/@fontsource/orbitron@5.2.5/files/orbitron-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url('./orbitron/orbitron-latin-700-normal.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/@fontsource/orbitron@5.2.5/files/orbitron-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src:
+    url('./orbitron/orbitron-latin-900-normal.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/@fontsource/orbitron@5.2.5/files/orbitron-latin-900-normal.woff2') format('woff2');
+}
+
+/* ---------- Playfair Display (elegant serif face) ---------- */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('./playfair-display/playfair-display-latin-400-normal.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/@fontsource/playfair-display@5.2.5/files/playfair-display-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url('./playfair-display/playfair-display-latin-700-normal.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/@fontsource/playfair-display@5.2.5/files/playfair-display-latin-700-normal.woff2') format('woff2');
+}
+
+/* ---------- Space Grotesk (modern sans face) ---------- */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url('./space-grotesk/space-grotesk-latin-400-normal.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.2.5/files/space-grotesk-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url('./space-grotesk/space-grotesk-latin-500-normal.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.2.5/files/space-grotesk-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url('./space-grotesk/space-grotesk-latin-700-normal.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.2.5/files/space-grotesk-latin-700-normal.woff2') format('woff2');
+}

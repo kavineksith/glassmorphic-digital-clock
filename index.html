@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Clock Module — demo</title>
+
+  <!-- Optional: prefer-clolor-scheme aware page chrome.
+       The component itself ships its own fonts + icons + styles,
+       so this <head> only styles the demo page around the clock. -->
+  <style>
+    :root { color-scheme: light dark; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding: 32px 18px 64px;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background:
+        radial-gradient(120% 90% at 10% 0%, #1e1b4b, transparent 55%),
+        radial-gradient(120% 90% at 100% 100%, #0f172a, transparent 55%),
+        #020617;
+      color: #e2e8f0;
+    }
+    header { text-align: center; max-width: 760px; margin: 0 auto; }
+    header h1 { font-size: clamp(1.4rem, 3.4vw, 2.1rem); margin: 0 0 6px; letter-spacing: 0.02em; }
+    header p { margin: 0 auto; max-width: 60ch; opacity: 0.7; font-size: 0.95rem; line-height: 1.5; }
+
+    /* Hero: a big clock filling the viewport width.
+       NOTE: don't set `display` on <digital-clock> — the component uses
+       display:flex internally so the panel + background stretch to fill
+       any min-height/height you give the host. Size with min-height or
+       with the --dc-min-height custom property. */
+    .hero digital-clock { min-height: clamp(320px, 70vh, 560px); }
+
+    /* Reusable variants: smaller clocks in a responsive grid, each
+       configured via HTML attributes only — no extra config files needed. */
+    .variants {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .variants digital-clock { min-height: 320px; }
+    .variant-label {
+      text-align: center;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: -8px;
+      padding-top: 10px;
+    }
+
+    .usage {
+      max-width: 760px;
+      margin: 12px auto 0;
+      padding: 18px 20px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.86rem;
+      line-height: 1.6;
+    }
+    .usage code {
+      background: rgba(255,255,255,0.08);
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+    }
+    .usage pre {
+      background: rgba(0,0,0,0.35);
+      padding: 12px 14px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 0.8rem;
+    }
+    footer { text-align: center; opacity: 0.5; font-size: 0.78rem; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>&lt;digital-clock&gt; — reusable web component</h1>
+    <p>
+      A config-driven, glassmorphic digital clock. Drop <code>dist/</code> anywhere,
+      include <code>dist/digital-clock.js</code>, and use <code>&lt;digital-clock&gt;</code>.
+      Theme, fonts, glass blur, animated gradient border, background image / slideshow /
+      neon gradient, 12 / 24-hour format, time zones and locale all live in
+      <code>dist/config.json</code>. Click the gear to tweak live — press
+      <kbd>S</kbd> to toggle settings, <kbd>Esc</kbd> to close.
+    </p>
+  </header>
+
+  <section class="hero">
+    <digital-clock></digital-clock>
+  </section>
+
+  <div class="variant-label">Same component, different attributes — fully reusable</div>
+  <section class="variants">
+    <digital-clock theme="neon-cyber" format="12" timezone="America/New_York"></digital-clock>
+    <digital-clock theme="sunset" format="24" timezone="Asia/Tokyo"></digital-clock>
+    <digital-clock theme="ocean" format="12" timezone="Europe/London"></digital-clock>
+  </section>
+
+  <div class="variant-label">Bonus themes — emerald / ruby / matrix / ice</div>
+  <section class="variants">
+    <digital-clock theme="emerald" format="24" timezone="Asia/Colombo"></digital-clock>
+    <digital-clock theme="ruby" format="12" timezone="Europe/Paris"></digital-clock>
+    <digital-clock theme="matrix" format="24" timezone="America/Los_Angeles"></digital-clock>
+  </section>
+
+  <div class="variant-label">Slideshow config — rotates 5 copyright-free Pexels photos every 6s</div>
+  <section class="hero">
+    <digital-clock config="dist/config-slideshow.json"></digital-clock>
+  </section>
+
+  <div class="usage">
+    <strong>Quick start</strong>
+    <pre>
+&lt;script src="dist/digital-clock.js"&gt;&lt;/script&gt;
+&lt;digital-clock&gt;&lt;/digital-clock&gt;
+
+&lt;!-- per-clock overrides via attributes --&gt;
+&lt;digital-clock theme="matrix" format="12" timezone="Asia/Colombo"&gt;&lt;/digital-clock&gt;
+
+&lt;!-- built-in slideshow config (rotates the sample wallpapers) --&gt;
+&lt;digital-clock config="dist/config-slideshow.json"&gt;&lt;/digital-clock&gt;
+
+&lt;!-- your own config file --&gt;
+&lt;digital-clock config="/path/to/my-config.json"&gt;&lt;/digital-clock&gt;
+    </pre>
+    <p>Or drive it imperatively:</p>
+    <pre>
+const clock = document.querySelector('digital-clock');
+clock.setConfig({ style: { theme: 'ruby' }, clock: { format: '12' } });
+clock.getConfig();   // -&gt; current merged config
+clock.resetConfig(); // -&gt; back to defaults
+    </pre>
+  </div>
+
+  <footer>MIT licensed • fonts &amp; icons ship offline with CDN fallback</footer>
+
+  <!-- The component. Resolves its own folder for fonts/icons/css/config. -->
+  <script src="dist/digital-clock.js"></script>
+</body>
+</html>

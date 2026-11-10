@@ -1,0 +1,52 @@
+// ============================================================
+//  Digital Clock Module — _responsive.scss
+//  The digit/label font-sizes already use clamp() so they scale
+//  fluidly across viewports. These breakpoints handle the things
+//  clamp() can't: panel padding, settings-panel layout (side panel
+//  on desktop → bottom sheet on mobile), and the AM/PM placement.
+// ============================================================
+
+// ---- Large desktop / TV / portrait kiosks ----
+@media (min-width: 1600px) {
+  :host {
+    --dc-digit-size: clamp(4rem, 9vw, 9rem);
+  }
+}
+
+// ---- Tablet landscape ----
+@media (max-width: 1024px) {
+  :host {
+    --dc-max-width: 720px;
+  }
+}
+
+// ---- Phone ----
+@media (max-width: 640px) {
+  :host {
+    --dc-max-width: 92vw;
+    --dc-label-tracking: 0.12em;
+    --dc-radius: 22px;
+  }
+  .dc-panel { padding: clamp(1.1rem, 5vw, 1.8rem) !important; }
+  // Stack AM/PM under the digits on tiny screens
+  .dc-time { flex-wrap: wrap; }
+  .dc-ampm { width: 100%; text-align: left; margin-top: 0.15em; }
+}
+
+// ---- Very small / landscape phone ----
+@media (max-width: 380px) {
+  :host {
+    --dc-label-size: clamp(0.62rem, 3.5vw, 0.78rem);
+  }
+}
+
+// ---- Reduced motion ----
+@media (prefers-reduced-motion: reduce) {
+  :host *,
+  :host *::before,
+  :host *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

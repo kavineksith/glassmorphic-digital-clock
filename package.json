@@ -1,0 +1,28 @@
+{
+  "name": "digital-clock-module",
+  "version": "1.0.0",
+  "description": "A reusable, config-driven, glassmorphic <digital-clock> web component with 12/24-hour + timezone support, animated gradient borders, image/slideshow/neon-gradient backgrounds, offline fonts and Bootstrap icons.",
+  "license": "MIT",
+  "keywords": ["digital-clock", "web-component", "custom-element", "glassmorphism", "liquid-glass", "scss", "timezone", "config-driven"],
+  "main": "dist/digital-clock.js",
+  "files": [
+    "dist/",
+    "src/",
+    "index.html",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build:css": "sass src/scss/digital-clock.scss:dist/digital-clock.css --no-source-map --style=expanded",
+    "build:css:min": "sass src/scss/digital-clock.scss:dist/digital-clock.min.css --no-source-map --style=compressed",
+    "build:js": "node -e \"require('fs').copyFileSync('src/js/digital-clock.js','dist/digital-clock.js')\"",
+    "build": "npm run build:css && npm run build:js",
+    "watch:css": "sass --watch src/scss/digital-clock.scss:dist/digital-clock.css",
+    "serve": "npx --yes serve -l 5173 .",
+    "dev": "npm run watch:css & npx --yes serve -l 5173 .",
+    "zip": "cd .. && zip -r digital-clock-module.zip digital-clock-module -x '*/node_modules/*' '*/.git/*'"
+  },
+  "devDependencies": {
+    "sass": "^1.83.0"
+  }
+}

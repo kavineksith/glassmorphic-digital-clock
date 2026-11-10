@@ -1,0 +1,46 @@
+MIT License
+
+Copyright (c) 2026 Digital Clock Module Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+------------------------------------------------------------------------------
+
+Third-party assets bundled in dist/fonts, dist/icons and dist/assets are
+released under their own permissive licenses:
+
+  • Google Fonts (Inter, Share Tech Mono, Orbitron, Playfair Display,
+    Space Grotesk) — SIL Open Font License 1.1
+    https://fonts.google.com/attribution
+  • Bootstrap Icons (bootstrap-icons) — MIT License
+    https://github.com/twbs/icons/blob/main/LICENSE
+  • Sample wallpapers and default background in dist/assets/*.jpg — Pexels License
+    (free for personal and commercial use, no attribution required)
+    https://www.pexels.com/license/
+    Sources (photographer + photo URL — credit appreciated but optional):
+      default-bg.jpg              — Photo by Mustafa Necati Oksuz on Pexels — https://www.pexels.com/photo/39086430/
+      wallpaper-aurora.jpg          — Photo by kublizz          on Pexels — https://www.pexels.com/photo/16681026/
+      wallpaper-aurora-pink.jpg     — Photo by Jason Pittman    on Pexels — https://www.pexels.com/photo/28949224/
+      wallpaper-mountain-sunset.jpg — Photo by Bastian Riccardi on Pexels — https://www.pexels.com/photo/38664023/
+      wallpaper-milky-way.jpg       — Photo by Tanita Lupa     on Pexels — https://www.pexels.com/photo/39180815/
+      wallpaper-night-street.jpg    — Photo by Agustin Fernandez on Pexels — https://www.pexels.com/photo/17067146/
+
+The woff2 files in dist/fonts are redistributed from Fontsource
+(https://fontsource.org), which repackages Google Fonts as npm packages
+under the same OFL 1.1 license.

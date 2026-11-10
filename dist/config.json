@@ -1,0 +1,60 @@
+{
+  "_comment": "Digital Clock Module — configuration file. Every option below is honored by the <digital-clock> web component. Edit this file to change the default look & behaviour. Runtime tweaks made in the settings panel are stored in localStorage and override these values. See README.md for the full option reference.",
+
+  "clock": {
+    "format": "24",
+    "showSeconds": true,
+    "showAmPm": true,
+    "showDate": true,
+    "showTimezone": true,
+    "dateStyle": "long",
+    "timezone": "auto",
+    "locale": "auto"
+  },
+
+  "style": {
+    "theme": "auto",
+    "font": {
+      "family": "digital-7seg",
+      "size": "md",
+      "weight": 400
+    },
+    "glass": {
+      "blur": 18,
+      "opacity": 0.45,
+      "liquid": true
+    },
+    "border": {
+      "mode": "animated-gradient",
+      "width": 2,
+      "color": "rgba(255,255,255,0.14)",
+      "gradientColors": ["#818cf8", "#ec4899", "#06b6d4", "#818cf8"],
+      "animationDuration": 6
+    }
+  },
+
+  "background": {
+    "mode": "image",
+    "image": "assets/default-bg.jpg",
+    "images": [],
+    "slideshowInterval": 8,
+    "slideshowTransition": 1200,
+    "fit": "cover",
+    "position": "center center",
+    "gradient": {
+      "type": "linear",
+      "angle": 135,
+      "colors": ["#0f172a", "#1e1b4b", "#312e81"],
+      "neon": true,
+      "animate": true
+    },
+    "overlay": true,
+    "overlayColor": "rgba(2,6,23,0.25)"
+  },
+
+  "features": {
+    "settingsPanel": true,
+    "keyboardShortcuts": true,
+    "persist": true
+  }
+}
